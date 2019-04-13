@@ -1,10 +1,5 @@
-var length = process.argv.length
-var sum = 0
-
-for(var i = 2; i < length; i++){
-  var str = process.argv[i]
-  var num = Number(str)
-  sum = sum + num
-}
-
-console.log(sum);
+var fs = require('fs');
+var file = process.argv[1];
+var buffer = fs.readFileSync(process.argv[2], 'utf8');
+var lines = buffer.split('\n');
+console.log(lines.length-1);
